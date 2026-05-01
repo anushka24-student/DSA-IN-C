@@ -1,0 +1,28 @@
+Write a program to calculate the stock span for each day.
+
+The stock span for a particular day is defined as the maximum number of consecutive days (including the current day) for which the stock price was less than or equal to the current day's price.
+The span always starts from the current day and counts backward consecutively until a day with a higher price is encountered or the beginning of the data is reached.
+
+#include <stdio.h>
+int main(){
+	int n,i,j;
+	scanf("%d",&n);
+	int a[n],stock[n];
+	for(i=0;i<n;i++){
+		scanf("%d",&stock[i]);
+	}
+	for(i=0;i<n;i++){
+		int count=1;
+		for(j=i-1;j>=0;j--){
+			if(stock[j]<=stock[i]){
+				count++;
+			}else{
+				break;
+			}
+		}
+		a[i]=count;
+	}
+	for(i=0;i<n;i++){
+		printf("%d ",a[i]);
+	}
+}
