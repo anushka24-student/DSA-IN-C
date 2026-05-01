@@ -1,0 +1,30 @@
+You are a software developer working on a program that needs to find the Next Greater Element for each element in a given array. The Next Greater Element for an element 
+x is defined as the first element x to the right of x in the array that is greater than x.
+
+#include <stdio.h>
+int main(){
+	int n,i,j,a[n];
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++){
+		int next=-1;
+		for(j=i+1;j<n;j++){
+			if(a[j]>a[i]){
+				next=a[j];
+				//next=1;
+				//printf("%d ",next);
+				break;
+			}
+		}
+		if(j){
+			printf("%d ",next);
+		}
+	}
+}
+
+
+
+
+
